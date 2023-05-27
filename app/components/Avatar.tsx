@@ -6,8 +6,8 @@ const Avatar = () => {
     <div>
         <Image 
                 className='rounded-full '
-                width = '50'
-                height = '50'
+                width = '30'
+                height = '30'
                 src='/images/placeholder.jpg' 
                 alt='profile picture'
             />            

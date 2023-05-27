@@ -1,7 +1,6 @@
 import React from 'react'
 import {BiWorld, BiDotsVerticalRounded} from 'react-icons/bi'
 import {AiOutlineMenu} from 'react-icons/ai'
-import Image from 'next/image'
 import Avatar from '../Avatar'
 
 const UserMenu = () => {
@@ -15,10 +14,21 @@ const UserMenu = () => {
         <div className='py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'>
             <BiWorld />
         </div>
-        <div className='flex justify-center items-center border-[1px] rounded-full 
-        hover:shadow-sm transition cursor-pointer gap-3 border-neutral-200'>
+        <div className='p-4
+          md:py-1
+          md:px-2
+          border-[1px] 
+          border-neutral-200 
+          flex 
+          flex-row 
+          items-center 
+          gap-3 
+          rounded-full 
+          cursor-pointer 
+          hover:shadow-md 
+          transition'>
             <AiOutlineMenu/>            
-            <div>
+            <div className='hidden md:block'>
                 <Avatar />
             </div>
         </div>

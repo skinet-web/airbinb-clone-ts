@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Logo = () => {
   return (
-    <div>
+    <div className='md:mr-2'>
       <Image 
       className='cursor-pointer hidden md:block'
       src='/images/logo.png' 
