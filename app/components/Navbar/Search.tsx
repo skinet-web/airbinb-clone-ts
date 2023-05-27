@@ -26,7 +26,7 @@ const Search = () => {
                 Anyweek
             </div>
             <div className='flex flex-row text-sm pl-6 pr-2 text-gray-600 items-center gap-3'>
-                <div className='ghidden sm:block'>
+                <div className='hidden sm:block'>
                     Add guests
                 </div>
                 <div className='p-2 bg-rose-500 rounded-full text-white'>
