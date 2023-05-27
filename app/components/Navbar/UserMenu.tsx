@@ -1,9 +1,19 @@
-import React from 'react'
+'use client'
+
 import {BiWorld, BiDotsVerticalRounded} from 'react-icons/bi'
 import {AiOutlineMenu} from 'react-icons/ai'
 import Avatar from '../Avatar'
+import { useCallback, useState } from 'react'
+import MenuItems from './MenuItems'
 
 const UserMenu = () => {
+  const [isOpen, setIsOpen] = useState(false)  
+
+  const toggleOpen = useCallback(() => {
+    setIsOpen((value) => !value)
+  }, [])
+
+
   return (
     <div className='relative'>
       <div className='flex flex-row justify-center items-center gap-3'>
@@ -14,7 +24,9 @@ const UserMenu = () => {
         <div className='py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer'>
             <BiWorld />
         </div>
-        <div className='p-4
+        <div 
+          onClick={toggleOpen}
+          className='p-4
           md:py-1
           md:px-2
           border-[1px] 
@@ -33,6 +45,42 @@ const UserMenu = () => {
             </div>
         </div>
       </div>
+
+      {isOpen && (
+        <div className='absolute
+        rounded-xl
+        shadow-md
+        w-[40vw]
+        md:w-3/4
+        bg-white
+        overflow-hidden
+        right-0
+        top-12
+        text-sm'>
+           <div>
+            <div className='font-semibold'>
+                <MenuItems 
+                onClick= {() => {}}
+                label= 'Sign up'
+                />
+            </div>           
+            <div className='border-b-[1px]'>
+                <MenuItems 
+                onClick= {() => {}}
+                label= 'Login'
+                />
+            </div>
+             <MenuItems 
+             onClick= {() => {}}
+             label= 'Airbnb your home'
+             />
+             <MenuItems 
+             onClick= {() => {}}
+             label= 'Help'
+             />
+           </div>     
+        </div>
+      )}
     </div>
   )
 }
