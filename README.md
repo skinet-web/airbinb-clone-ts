@@ -1,3 +1,3 @@
 WIP
 
-Live: https://cute-figolla-aecb8a.netlify.app/
+Live: https://airbnb-clone22.netlify.app/
