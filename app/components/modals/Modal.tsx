@@ -15,7 +15,7 @@ interface ModalProps {
     actionLabel: string;
     disabled?: boolean;
     secondaryAction?: () => void;
-    secondaryActionLabel: string;
+    secondaryActionLabel?: string;
 }
 
 const Modal:  React.FC<ModalProps> = ({
@@ -72,7 +72,7 @@ const Modal:  React.FC<ModalProps> = ({
           <div className="relative w-full md:w-4/6 lg:3/6 xl:w-2/5 h-full lg:h-auto md:h-auto">
             {/* Content */}
             <div className={`translate duration-300 h-full 
-            ${showModal ? 'translate-y-0' : 'trasnalte-y-full'}
+            ${showModal ? 'translate-y-0' : 'translate-y-full'}
             ${showModal ? 'opacity-100' : 'opacity-0'}
             `}>
                <div className="translate h-full
@@ -111,7 +111,19 @@ const Modal:  React.FC<ModalProps> = ({
                         {/* FOOTER */}
                     <div className=" flex flex-col gap-2 p-6">
                         <div className="flex flex-row items-center gap-4 w-full">
-                            <Button label="my botton"/>
+                            {secondaryAction && secondaryActionLabel && ( 
+                            <Button
+                            outline 
+                            disabled={disabled}
+                            label={secondaryActionLabel}
+                            onClick={handleSecondaryAction}                            
+                            />
+                            )}
+                            <Button 
+                            disabled={disabled}
+                            label={actionLabel}
+                            onClick={handleSubmit}                            
+                            />
                         </div>                        
                     </div>
                 </div> 
