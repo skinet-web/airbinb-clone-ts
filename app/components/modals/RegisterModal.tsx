@@ -54,7 +54,8 @@ const bodyContent = (
         />
         <Input
         id="email"
-        label="Email"        
+        label="Email"
+        type="email"        
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -63,6 +64,7 @@ const bodyContent = (
       <Input
         id="name"
         label="Name"
+        type="name"
         disabled={isLoading}
         register={register}
         errors={errors}
