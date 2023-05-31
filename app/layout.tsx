@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar/Navbar'
+import LoginModal from './components/modals/LoginModal';
 import RegisterModal from './components/modals/RegisterModal';
 import './globals.css'
 import { Nunito } from 'next/font/google'
@@ -24,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body className={font.className} suppressHydrationWarning={true}>
-        <Toaster />        
+        <Toaster />
+        <LoginModal />        
         <RegisterModal />
         <Navbar />
         {children}

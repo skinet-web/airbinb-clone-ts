@@ -6,6 +6,7 @@ import axios from 'axios'
 import { AiFillGithub } from 'react-icons/ai'
 import { FcGoogle } from 'react-icons/fc'
 import useRegisterModal from '@/app/hooks/useRegisterModal'
+import useLoginModal from '@/app/hooks/useLoginModal'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import Heading from '../Heading'
 import Input from '../inputs/Input'
@@ -16,6 +17,7 @@ import {signIn}  from 'next-auth/react'
 const RegisterModal = () => {
 
   const registerModal = useRegisterModal()
+  const loginModal = useLoginModal()
   const [isLoading, setIsLoading] = useState(false)
   const {
     register, 
@@ -112,7 +114,10 @@ const footerContent = (
                     Already have an account?
                 </div>
                 <div 
-                onClick={registerModal.onClose}
+                onClick={() => {
+                    registerModal.onClose(); 
+                    loginModal.onOpen();
+                }}
                 className='
                 font-semibold
                 text-neutral-800 
