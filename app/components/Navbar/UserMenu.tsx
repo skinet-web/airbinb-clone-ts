@@ -7,8 +7,16 @@ import { useCallback, useState } from 'react'
 import MenuItems from './MenuItems'
 import useRegisterModal from '@/app/hooks/useRegisterModal'
 import useLoginModal from '@/app/hooks/useLoginModal'
+import { signOut } from 'next-auth/react'
+import { SafeUser } from '@/app/types'
 
-const UserMenu = () => {
+interface UserMenuProps {
+  currentUser?: SafeUser | null
+}
+
+const UserMenu: React.FC<UserMenuProps> = ({
+  currentUser
+}) => {
   const registerModal = useRegisterModal()
   const loginModal = useLoginModal()
 
@@ -62,7 +70,39 @@ const UserMenu = () => {
         right-0
         top-12
         text-sm'>
-           <div>
+        {currentUser ? ( 
+          <>
+          <div className='font-semibold'>
+              <MenuItems 
+              onClick= {() => {}}
+              label= 'My trips'
+              />
+          </div>           
+          <MenuItems 
+          onClick= {() => {}}
+          label= 'My favorites'
+            />          
+          <MenuItems 
+           onClick= {() => {}}
+           label= 'My reservations'
+           />
+           <div className='border-b-[1px]'>
+           <MenuItems 
+           onClick= {() => {}}
+           label= 'My properties'
+           />
+           </div>
+            <MenuItems 
+            onClick= {() => {}}
+            label= 'Airbnb my home'
+            />           
+           <MenuItems 
+           onClick= {() => signOut()}
+           label= 'Logout'
+           />
+      </>   
+        ) : (
+          <>
             <div className='font-semibold'>
                 <MenuItems 
                 onClick= {registerModal.onOpen}
@@ -83,8 +123,9 @@ const UserMenu = () => {
              onClick= {() => {}}
              label= 'Help'
              />
-           </div>     
-        </div>
+        </> 
+        )}       
+      </div>
       )}
     </div>
   )

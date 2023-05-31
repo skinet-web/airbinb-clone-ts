@@ -1,3 +1,4 @@
+import getCurrentUser from './actions/getCurrentUser';
 import Navbar from './components/Navbar/Navbar'
 import LoginModal from './components/modals/LoginModal';
 import RegisterModal from './components/modals/RegisterModal';
@@ -17,18 +18,19 @@ export const metadata = {
 
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const currentUser = await getCurrentUser();
   return (
     <html lang="en" >
       <body className={font.className} suppressHydrationWarning={true}>
         <Toaster />
         <LoginModal />        
         <RegisterModal />
-        <Navbar />
+        <Navbar currentUser = {currentUser}/>
         {children}
       </body>
     </html>
