@@ -54,7 +54,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
           transition'>
             <AiOutlineMenu/>            
             <div className='hidden md:block'>
-                <Avatar />
+                <Avatar src={currentUser?.image}/>
             </div>
         </div>
       </div>
@@ -73,10 +73,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
         {currentUser ? ( 
           <>
           <div className='font-semibold'>
-              <MenuItems 
-              onClick= {() => {}}
-              label= 'My trips'
-              />
+            <MenuItems 
+            onClick= {() => {}}
+            label= 'My trips'
+            />
           </div>           
           <MenuItems 
           onClick= {() => {}}
