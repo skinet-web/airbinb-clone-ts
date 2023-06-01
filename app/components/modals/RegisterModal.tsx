@@ -48,6 +48,12 @@ const onSubmit: SubmitHandler<FieldValues> = (data) => {
         })
 }
 
+const toggleOpen = useCallback(() => {
+    loginModal.onOpen(),
+    registerModal.onClose()
+    
+  }, [loginModal, registerModal])
+
 const bodyContent = (
     <div className='flex flex-col gap-4'>
         <Heading 
@@ -114,10 +120,7 @@ const footerContent = (
                     Already have an account?
                 </div>
                 <div 
-                onClick={() => {
-                    registerModal.onClose(); 
-                    loginModal.onOpen();
-                }}
+                onClick={toggleOpen}
                 className='
                 font-semibold
                 text-neutral-800 
