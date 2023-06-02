@@ -41,7 +41,7 @@ const onSubmit: SubmitHandler<FieldValues> = (data) => {
             registerModal.onClose()
         })
         .catch((error) => {
-            toast.error('Something went wrong')
+            toast.error('Something went wrong ')
         })
         .finally(() => {
             setIsLoading(false);
