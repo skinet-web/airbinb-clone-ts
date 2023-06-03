@@ -17,6 +17,7 @@ import { BsSnow } from 'react-icons/bs';
 import { IoDiamond } from 'react-icons/io5';
 import { MdOutlineVilla } from 'react-icons/md';
 import CategoriesBox from './CategoriesBox'
+import { usePathname, useSearchParams } from 'next/navigation';
 
 export const categories = [
     {
@@ -97,9 +98,19 @@ export const categories = [
   ]
 
 const Categories = () => {
+    const params = useSearchParams();
+    const category = params?.get('category');
+    const pathname = usePathname();
+
+    const isMainPage = pathname === '/';
+
+    if (!isMainPage) {
+        return null;
+    }
+
   return (
     <Container>
-        <div className='  overflow-x-auto
+        <div className=' overflow-x-auto 
         flex
         pt-4
         items-center
@@ -110,6 +121,7 @@ const Categories = () => {
               <CategoriesBox
               key={item.label} 
               label={item.label}
+              selected = {category === item.label}
               icon={item.icon}
               />
                 
