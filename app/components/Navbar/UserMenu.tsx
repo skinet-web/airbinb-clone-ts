@@ -8,7 +8,7 @@ import MenuItems from './MenuItems'
 import useRegisterModal from '@/app/hooks/useRegisterModal'
 import useLoginModal from '@/app/hooks/useLoginModal'
 import { signOut } from 'next-auth/react'
-import type { User } from '@prisma/client'
+import type { User } from 'prisma/prisma-client'
 import { SafeUser } from '@/app/types'
 import useRentModal from '@/app/hooks/useRentModal'
 
