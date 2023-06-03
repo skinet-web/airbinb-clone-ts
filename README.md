@@ -1,3 +1,5 @@
 WIP
 
-Live: https://airbnb-clone22.netlify.app/
+Login with Google/Github works only on the localserver for now.
+
+Live: https://airbinb-clone-ts.vercel.app/
