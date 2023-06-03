@@ -5,6 +5,7 @@ import RegisterModal from './components/modals/RegisterModal';
 import './globals.css'
 import { Nunito } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
+import RentModal from './components/modals/RentModal';
 
 const font = Nunito({ 
   subsets: ['latin'], 
@@ -28,7 +29,8 @@ export default async function RootLayout({
     <html lang="en" >
       <body className={font.className} suppressHydrationWarning={true}>
         <Toaster />
-        <LoginModal />        
+        <LoginModal />
+        <RentModal />        
         <RegisterModal />
         <Navbar currentUser = {currentUser}/>
         {children}
