@@ -116,20 +116,16 @@ const RentModal = () => {
 
   if (step === STEPS.LOCATION){
     bodyContent = (
-      <div className='flex flex-col gap-8'>
-        <Heading 
+      <div className="flex flex-col gap-8">
+        <Heading
           title="Where is your place located?"
           subtitle="Help guests find you!"
         />
-        <CountrySelect
-          value={location}                 
+        <Map center={location?.latlng} />
+        <CountrySelect 
+          value={location} 
           onChange={(value) => setCustomValue('location', value)} 
-               
         />
-        <Map 
-        center={location?.latlng}
-        />  
-          
         
       </div>
     )

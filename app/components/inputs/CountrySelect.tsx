@@ -24,7 +24,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
   const { getAll } = useCountries();
 
   return ( 
-    <div>
+    <div className='relative z-3'>
       <Select
         placeholder="Anywhere"
         isClearable
