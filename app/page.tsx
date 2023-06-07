@@ -1,7 +1,6 @@
 import Container from "./components/Container";
 import { EmptyState } from "./components/EmptyState";
 import getListings from "./actions/getListings";
-import Image from "next/image";
 import ListingCard from "./components/listings/ListingCard";
 
 export default async function Home() {
@@ -21,7 +20,8 @@ export default async function Home() {
               {listings.map((item: any) => {
                 return (                  
                     <ListingCard 
-                    key = {item.title}
+                    key = {item.id}
+                    data = {item}
                     />
                 ) 
               })}              
