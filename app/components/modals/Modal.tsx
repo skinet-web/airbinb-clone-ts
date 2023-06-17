@@ -75,7 +75,7 @@ const Modal:  React.FC<ModalProps> = ({
             ${showModal ? 'translate-y-0' : 'translate-y-full'}
             ${showModal ? 'opacity-100' : 'opacity-0'}
             `}>
-               <div className="translate h-full
+               <div className="translate 
               lg:h-auto
               md:h-auto
               border-0 
